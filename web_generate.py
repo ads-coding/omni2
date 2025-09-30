@@ -89,15 +89,47 @@ def infer_vlm(input_img_path, input_instruction, prefix):
     return output_text[0]
 
 
+PREFERRED_KONTEXT_RESOLUTIONS = [
+    (672, 1568),
+    (688, 1504),
+    (720, 1456),
+    (752, 1392),
+    (800, 1328),
+    (832, 1248),
+    (880, 1184),
+    (944, 1104),
+    (1024, 1024),
+    (1104, 944),
+    (1184, 880),
+    (1248, 832),
+    (1328, 800),
+    (1392, 752),
+    (1456, 720),
+    (1504, 688),
+    (1568, 672),
+]
+def find_closest_resolution(width, height, preferred_resolutions):
+    input_ratio = width / height
+    closest_resolution = min(
+        preferred_resolutions,
+        key=lambda res: abs((res[0] / res[1]) - input_ratio)
+    )
+    return closest_resolution
+
 def perform_generation(input_img_paths, input_instruction, output_path, height=1024, width=1024):
     prefix = " It is generation task."
     source_imgs = [load_image(path) for path in input_img_paths]
+    resized_imgs = []
+    for img in source_imgs:
+        target_resolution = find_closest_resolution(img.width, img.height, PREFERRED_KONTEXT_RESOLUTIONS)
+        resized_img = img.resize(target_resolution, Image.LANCZOS)
+        resized_imgs.append(resized_img)
     prompt = infer_vlm(input_img_paths, input_instruction, prefix)
     prompt = extract_gen_content(prompt)
     print(f"Generated Prompt for VLM: {prompt}")
     
     image = pipe(
-        images=source_imgs,
+        images=resized_imgs,
         height=height,
         width=width,
         prompt=prompt,

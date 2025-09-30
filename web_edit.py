@@ -88,18 +88,49 @@ def infer_vlm(input_img_path, input_instruction, prefix):
     output_text = processor.batch_decode(generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False)
     return output_text[0]
 
+PREFERRED_KONTEXT_RESOLUTIONS = [
+    (672, 1568),
+    (688, 1504),
+    (720, 1456),
+    (752, 1392),
+    (800, 1328),
+    (832, 1248),
+    (880, 1184),
+    (944, 1104),
+    (1024, 1024),
+    (1104, 944),
+    (1184, 880),
+    (1248, 832),
+    (1328, 800),
+    (1392, 752),
+    (1456, 720),
+    (1504, 688),
+    (1568, 672),
+]
+def find_closest_resolution(width, height, preferred_resolutions):
+    input_ratio = width / height
+    closest_resolution = min(
+        preferred_resolutions,
+        key=lambda res: abs((res[0] / res[1]) - input_ratio)
+    )
+    return closest_resolution
 
 def perform_edit(input_img_paths, input_instruction, output_path):
     prefix = " It is editing task."
     source_imgs = [load_image(path) for path in input_img_paths]
+    resized_imgs = []
+    for img in source_imgs:
+        target_resolution = find_closest_resolution(img.width, img.height, PREFERRED_KONTEXT_RESOLUTIONS)
+        resized_img = img.resize(target_resolution, Image.LANCZOS)
+        resized_imgs.append(resized_img)
     prompt = infer_vlm(input_img_paths, input_instruction, prefix)
     prompt = extract_gen_content(prompt)
     print(f"Generated Prompt for VLM: {prompt}")
 
     image = pipe(
-        images=source_imgs,
-        height=source_imgs[0].height,
-        width=source_imgs[0].width,
+        images=resized_imgs,
+        height=resized_imgs[0].height,
+        width=resized_imgs[0].width,
         prompt=prompt,
         num_inference_steps=30,
         guidance_scale=3.5,
@@ -196,12 +227,12 @@ with gr.Blocks(theme=gr.themes.Soft(), title="DreamOmni2", css=css) as demo:
     gr.Examples(
         label="Editing Examples",
         examples=[
+            ["edit_tests/4/ref_0.jpg", "edit_tests/4/ref_1.jpg", "Replace the first image have the same image style as the second image.","edit_tests/4/res.jpg"],
+            ["edit_tests/5/ref_0.jpg", "edit_tests/5/ref_1.jpg", "Make the person in the first image have the same hairstyle as the person in the second image.","edit_tests/5/res.jpg"],
             ["edit_tests/src.jpg", "edit_tests/ref.jpg", "Make the woman from the second image stand on the road in the first image.","edit_tests/edi_res.png"],
             ["edit_tests/1/ref_0.jpg", "edit_tests/1/ref_1.jpg", "Replace the lantern in the first image with the dog in the second image.","edit_tests/1/res.jpg"],
             ["edit_tests/2/ref_0.jpg", "edit_tests/2/ref_1.jpg", "Replace the suit in the first image with the clothes in the second image.","edit_tests/2/res.jpg"],
             ["edit_tests/3/ref_0.jpg", "edit_tests/3/ref_1.jpg", "Make the first image has the same light condition as the second image.","edit_tests/3/res.jpg"],
-            ["edit_tests/4/ref_0.jpg", "edit_tests/4/ref_1.jpg", "Replace the first image have the same image style as the second image.","edit_tests/4/res.jpg"],
-            ["edit_tests/5/ref_0.jpg", "edit_tests/5/ref_1.jpg", "Make the person in the first image have the same hairstyle as the person in the second image.","edit_tests/5/res.jpg"],
             ["edit_tests/6/ref_0.jpg", "edit_tests/6/ref_1.jpg", "Make the words in the first image have the same font as the words in the second image.","edit_tests/6/res.jpg"],
             ["edit_tests/7/ref_0.jpg", "edit_tests/7/ref_1.jpg", "Make the car in the first image have the same pattern as the mouse in the second image.","edit_tests/7/res.jpg"],
             ["edit_tests/8/ref_0.jpg", "edit_tests/8/ref_1.jpg", "Make the dress in the first image have the same pattern in the second image.","edit_tests/8/res.jpg"],
