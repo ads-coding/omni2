@@ -1,6 +1,8 @@
 # DreamOmni2
 This project is the official implementation of 'DreamOmni2: Multimodal Instruction-based Editing and Generation''
 
+<a href="https://pbihao.github.io/projects/DreamOmni2/index.html"><img src="https://img.shields.io/badge/Project-Page-Green"></a>
+
 ## Web Demo
 ```
 CUDA_VISIBLE_DEVICES=0 python web_edit.py \
