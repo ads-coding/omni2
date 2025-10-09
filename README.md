@@ -21,7 +21,15 @@
 ## 🔥 News
 - **2025.6.26**: Release DreamOmni2 tech report.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8xpoiRK57uU&t=37s/0.jpg)](https://www.youtube.com/watch?v=8xpoiRK57uU&t=37s)
+
+
+
+https://github.com/user-attachments/assets/fdb4dbc4-884b-488c-86cd-eafa9b405279
+
+
+
+
+
 
 ## Web Demo
 ```
