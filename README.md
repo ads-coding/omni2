@@ -19,7 +19,7 @@
 </p>
 
 ## 🔥 News
-* 2025.10.09: release DreamOmni2 tech report.
+- **2025.6.26**: Release DreamOmni2 tech report.
 
 ## Web Demo
 ```
