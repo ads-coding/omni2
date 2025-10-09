@@ -1,5 +1,4 @@
-# DreamOmni2
-This project is the official implementation of **[DreamOmni2: Multimodal Instruction-based Editing and Generation](https://arxiv.org/html/2510.06679v1)**
+# DreamOmni2: Multimodal Instruction-based Editing and Generation
 
 <p align="center">
     <a href="https://arxiv.org/html/2510.06679v1">
@@ -18,6 +17,9 @@ This project is the official implementation of **[DreamOmni2: Multimodal Instruc
         <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Demo-yellow">
     </a>
 </p>
+
+## 🔥 News
+* 2025.10.09: release DreamOmni2 tech report.
 
 ## Web Demo
 ```
