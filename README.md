@@ -3,7 +3,7 @@ This project is the official implementation of **[DreamOmni2: Multimodal Instruc
 
 <p align="center">
     <a href="https://arxiv.org/html/2510.06679v1">
-            <img alt="Build" src="https://img.shields.io/badge/arXiv%20paper-2506.21416-b31b1b.svg">
+            <img alt="Build" src="https://img.shields.io/badge/arXiv%20paper-2510.06679v1-b31b1b.svg">
     </a>
     <a href="https://pbihao.github.io/projects/DreamOmni2/index.html">
         <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-blue">
