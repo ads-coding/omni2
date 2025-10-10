@@ -100,7 +100,7 @@ ARGS = parse_args()
 vlm_path = ARGS.vlm_path
 edit_lora_path = ARGS.edit_lora_path
 base_model = ARGS.base_model_path
-pipe = FluxKontextPipeline.from_pretrained(base_model, torch_dtype=torch.bfloat16)
+pipe = DreamOmni2Pipeline.from_pretrained(base_model, torch_dtype=torch.bfloat16)
 pipe.to(device)
 
 pipe.load_lora_weights(

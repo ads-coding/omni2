@@ -63,7 +63,7 @@ def parse_args():
         "--gen_lora_path", 
         type=str, 
         default="./models/gen_lora", 
-        help="Path to the FLUX.1-Kontext editing LoRA weights directory."
+        help="Path to the FLUX.1-Kontext generation LoRA weights directory."
     )
     parser.add_argument(
         "--base_model_path", 
@@ -83,7 +83,7 @@ def parse_args():
         "--input_instruction", 
         type=str, 
         default="In the scene, the character from the first image stands on the left, and the character from the second image stands on the right. They are shaking hands against the backdrop of a spaceship interior.", 
-        help="Instruction for image editing."
+        help="Instruction for image generation."
     )
     parser.add_argument(
         "--height", 
@@ -96,12 +96,6 @@ def parse_args():
         type=int, 
         default=1024, 
         help="The width of output image."
-    )
-    parser.add_argument(
-        "--input_instruction", 
-        type=str, 
-        default="In the scene, the character from the first image stands on the left, and the character from the second image stands on the right. They are shaking hands against the backdrop of a spaceship interior.", 
-        help="Instruction for image editing."
     )
     # Argument for the output image path
     parser.add_argument(
@@ -118,7 +112,7 @@ ARGS = parse_args()
 vlm_path = ARGS.vlm_path
 gen_lora_path = ARGS.gen_lora_path
 base_model = ARGS.base_model_path
-pipe = FluxKontextPipeline.from_pretrained(base_model, torch_dtype=torch.bfloat16)
+pipe = DreamOmni2Pipeline.from_pretrained(base_model, torch_dtype=torch.bfloat16)
 pipe.to(device)
 
 pipe.load_lora_weights(
