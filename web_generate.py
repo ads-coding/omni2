@@ -1,5 +1,5 @@
 import torch
-from pipeline_flux_kontext import FluxKontextPipeline
+from dreamomni2.pipeline_dreamomni2 import DreamOmni2Pipeline
 from diffusers.utils import load_image
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
@@ -53,7 +53,7 @@ def extract_gen_content(text):
 
 print(f"Loading models from vlm_path: {vlm_path}, gen_lora_path: {gen_lora_path}")
 
-pipe = FluxKontextPipeline.from_pretrained(
+pipe = DreamOmni2Pipeline.from_pretrained(
     "black-forest-labs/FLUX.1-Kontext-dev",
     torch_dtype=torch.bfloat16
 )
