@@ -46,6 +46,8 @@ Beyond traditional instruction-based editing models, DreamOmni2 supports multimo
 
 Building upon these two new tasks, we introduce DreamOmni2, which is capable of multimodal instruction-based editing and generation under any concrete or abstract concept guidance. Overall, DreamOmni2 is a more intelligent and powerful open-sourced unified generation and editing model, offering enhanced capabilities across a wide range of tasks.
 
+## Editing and Generation Model?
+Editing and generation are distinct tasks. Editing requires strict consistency in preserving the non-edited areas of the source image, while generation only needs to retain the ID, IP, or attribution from the reference image as per the instructions, allowing the entire image to be regenerated with a focus on aesthetics. We’ve found that the instructions for generation and editing are often similar, so we’ve separated these two tasks to make it easier for users to choose the appropriate task type.
 
 ## Quick Start
 
