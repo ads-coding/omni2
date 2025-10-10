@@ -32,6 +32,13 @@
 </p>
 
 
+<div align="center">
+  <a href="https://cloud.video.taobao.com/vod/HxWB8i8sYkh0DdfvfByoMHqRtezNMCpWJdjzWTOCqdY.mp4">
+    <img src="imgs/cover.png" alt="Watch the video" style="width: 600px;">
+  </a>
+</div>
+
+
 ## Introduction
 
 **(1) Multimodal Instruction-based Generation**
