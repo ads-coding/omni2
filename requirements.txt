@@ -1,0 +1,10 @@
+timm
+ujson
+peft
+datasets
+transformers
+opencv-python
+qwen-vl-utils
+lmdb
+diffusers
+numpy
