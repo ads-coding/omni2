@@ -30,7 +30,8 @@ except:
 from dreamomni2.pipeline_dreamomni2 import DreamOmni2Pipeline
 from diffusers.utils import load_image
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
-from qwen_vl_utils import process_vision_info
+# from qwen_vl_utils import process_vision_info
+from utils.vprocess import process_vision_info, resizeinput
 import os
 import argparse
 from tqdm import tqdm
@@ -78,6 +79,24 @@ def parse_args():
         help="List of input image paths (e.g., src and ref images)."
     )
     # Argument for the input instruction
+    parser.add_argument(
+        "--input_instruction", 
+        type=str, 
+        default="In the scene, the character from the first image stands on the left, and the character from the second image stands on the right. They are shaking hands against the backdrop of a spaceship interior.", 
+        help="Instruction for image editing."
+    )
+    parser.add_argument(
+        "--height", 
+        type=int, 
+        default=1024, 
+        help="The height of output image."
+    )
+    parser.add_argument(
+        "--width", 
+        type=int, 
+        default=1024, 
+        help="The width of output image."
+    )
     parser.add_argument(
         "--input_instruction", 
         type=str, 
@@ -169,10 +188,11 @@ prefix=" It is generation task."
 source_imgs = []
 for path in input_img_path:
     img = load_image(path)
-    source_imgs.append(img)
+    # source_imgs.append(img)
+    source_imgs.append(resizeinput(img))
 
 prompt=infer_vlm(input_img_path,input_instruction,prefix)
 prompt = extract_gen_content(prompt)
-image=infer(source_imgs,prompt)
+image=infer(source_imgs,prompt,height=ARGS.height,width=ARGS.width)
 output_path = ARGS.output_path
 image.save(output_path)

@@ -30,7 +30,8 @@ except:
 from dreamomni2.pipeline_dreamomni2 import DreamOmni2Pipeline
 from diffusers.utils import load_image
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
-from qwen_vl_utils import process_vision_info
+# from qwen_vl_utils import process_vision_info
+from utils.vprocess import process_vision_info, resizeinput
 import os
 import argparse
 from tqdm import tqdm
@@ -169,7 +170,8 @@ prefix=" It is editing task."
 source_imgs = []
 for path in input_img_path:
     img = load_image(path)
-    source_imgs.append(img)
+    # source_imgs.append(img)
+    source_imgs.append(resizeinput(img))
 
 prompt=infer_vlm(input_img_path,input_instruction,prefix)
 prompt = extract_gen_content(prompt)
