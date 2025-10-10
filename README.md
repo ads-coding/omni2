@@ -22,7 +22,7 @@
 </p>
 
 ## 🔥 News
-- 🔥**2025.10.10**: Release DreamOmni2's codes and models.
+- 🔥**2025.10.10**: Release DreamOmni2's codes and [models](https://huggingface.co/xiabs/DreamOmni2).
 - 🔥**2025.10.09**: Release DreamOmni2 tech report.
 
 
