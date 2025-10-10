@@ -67,6 +67,9 @@ huggingface-cli download --resume-download --local-dir-use-symlinks False xiabs/
 ### Inference
 
 Multimodal Instriction-based Editing
+
+**Notably, for editing tasks, due to the format settings of the training data, we need to place the image to be edited in the first position.**
+
 ```bash
 python3 /mnt/bn/unifygen/xiabin_dev/iclr2026/DreamOmni2/inference_edit.py \
     --input_img_path "example_input/edit_tests/src.jpg" "example_input/edit_tests/ref.jpg" \
@@ -74,7 +77,7 @@ python3 /mnt/bn/unifygen/xiabin_dev/iclr2026/DreamOmni2/inference_edit.py \
     --output_path "example_input/edit_tests/edit_res.png"
 ```
 
-Multimodal Instriction-based Editing
+Multimodal Instriction-based Generation
 ```bash
 python3 /mnt/bn/unifygen/xiabin_dev/iclr2026/DreamOmni2/inference_gen.py \
     --input_img_path "example_input/gen_tests/img1.jpg" "example_input/gen_tests/img2.jpg" \
