@@ -51,6 +51,9 @@ Building upon these two new tasks, we introduce DreamOmni2, which is capable of 
 ### Requirements and Installation
 
 First, install the necessary dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 
 ## Web Demo
