@@ -2,7 +2,8 @@ import torch
 from dreamomni2.pipeline_dreamomni2 import DreamOmni2Pipeline
 from diffusers.utils import load_image
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
-from qwen_vl_utils import process_vision_info
+# from qwen_vl_utils import process_vision_info
+from utils.vprocess import process_vision_info, resizeinput
 import os
 import re
 from PIL import Image
@@ -118,18 +119,17 @@ def find_closest_resolution(width, height, preferred_resolutions):
 
 def perform_generation(input_img_paths, input_instruction, output_path, height=1024, width=1024):
     prefix = " It is generation task."
-    source_imgs = [load_image(path) for path in input_img_paths]
-    resized_imgs = []
-    for img in source_imgs:
-        target_resolution = find_closest_resolution(img.width, img.height, PREFERRED_KONTEXT_RESOLUTIONS)
-        resized_img = img.resize(target_resolution, Image.LANCZOS)
-        resized_imgs.append(resized_img)
+    source_imgs = []
+    for path in input_img_paths:
+        img = load_image(path)
+        # source_imgs.append(img)
+        source_imgs.append(resizeinput(img))
     prompt = infer_vlm(input_img_paths, input_instruction, prefix)
     prompt = extract_gen_content(prompt)
     print(f"Generated Prompt for VLM: {prompt}")
     
     image = pipe(
-        images=resized_imgs,
+        images=source_imgs,
         height=height,
         width=width,
         prompt=prompt,

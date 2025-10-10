@@ -49,7 +49,7 @@ def resizeinput(img):
     )
     image_width = image_width // multiple_of * multiple_of
     image_height = image_height // multiple_of * multiple_of
-    img = img.resize((image_width, image_height))
+    img = img.resize((image_width, image_height), Image.LANCZOS)
     return img
 
 
