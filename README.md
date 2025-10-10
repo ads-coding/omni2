@@ -22,9 +22,8 @@
 - **2025.6.26**: Release DreamOmni2 tech report.
 
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8xpoiRK57uU/0.jpg)](https://www.youtube.com/watch?v=8xpoiRK57uU)
 
-
-More clear video, please see https://www.youtube.com/watch?v=8xpoiRK57uU
 
 
 
