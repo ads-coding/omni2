@@ -8,7 +8,7 @@
         <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-blue">
     </a>
     <a href="https://www.youtube.com/watch?v=8xpoiRK57uU">
-        <img alt="Project Page" src="https://img.shields.io/badge/Video-red">
+        <img alt="Video Demo" src="https://img.shields.io/badge/Video-Demo-red">
     </a>
     <a href="">
         <img alt="Build" src="https://img.shields.io/badge/DreamOmni2-Benchmark-green">
@@ -22,8 +22,8 @@
 </p>
 
 ## 🔥 News
-- 🔥**2025.10.10**: Release DreamOmni2's codes and [models](https://huggingface.co/xiabs/DreamOmni2).
-- 🔥**2025.10.09**: Release DreamOmni2 tech report.
+- 🔥**2025.10.10**: Release DreamOmni2's [codes](https://github.com/dvlab-research/DreamOmni2) and [models](https://huggingface.co/xiabs/DreamOmni2).
+- 🔥**2025.10.09**: Release DreamOmni2 [tech report](https://arxiv.org/html/2510.06679v1).
 
 
 <p align="center">
@@ -52,11 +52,39 @@ Building upon these two new tasks, we introduce DreamOmni2, which is capable of 
 
 First, install the necessary dependencies:
 ```bash
+git clone https://github.com/dvlab-research/DreamOmni2
+cd ./DreamOmni2
 pip install -r requirements.txt
 ```
 
+Next, download the DreamOmni2 weights into the models folder.
 
-## Web Demo
+```bash
+huggingface-cli download --resume-download --local-dir-use-symlinks False xiabs/DreamOmni2 --local-dir ./models
+```
+
+### Inference
+
+Multimodal Instriction-based Editing
+```bash
+python3 /mnt/bn/unifygen/xiabin_dev/iclr2026/DreamOmni2/inference_edit.py \
+    --input_img_path "example_input/edit_tests/src.jpg" "example_input/edit_tests/ref.jpg" \
+    --input_instruction "Make the woman from the second image stand on the road in the first image." \
+    --output_path "example_input/edit_tests/edit_res.png"
+```
+
+Multimodal Instriction-based Editing
+```bash
+python3 /mnt/bn/unifygen/xiabin_dev/iclr2026/DreamOmni2/inference_gen.py \
+    --input_img_path "example_input/gen_tests/img1.jpg" "example_input/gen_tests/img2.jpg" \
+    --input_instruction "In the scene, the character from the first image stands on the left, and the character from the second image stands on the right. They are shaking hands against the backdrop of a spaceship interior." \
+    --output_path "example_input/gen_tests/gen_res.png" \
+    --height 1024 \
+    --width 1024
+```
+
+
+### Web Demo
 ```
 CUDA_VISIBLE_DEVICES=0 python web_edit.py \
     --vlm_path PATH_TO_VLM \
