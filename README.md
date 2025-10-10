@@ -10,7 +10,7 @@
     <a href="https://www.youtube.com/watch?v=8xpoiRK57uU">
         <img alt="Video Demo" src="https://img.shields.io/badge/Video-Demo-red">
     </a>
-    <a href="">
+    <a href="https://huggingface.co/datasets/xiabs/DreamOmni2Bench">
         <img alt="Build" src="https://img.shields.io/badge/DreamOmni2-Benchmark-green">
     </a>
     <a href="https://huggingface.co/xiabs/DreamOmni2">
