@@ -33,22 +33,24 @@
 
 ## Introduction
 
-Currently, instruction-based editing relies solely on language instructions, which often fail to capture specific editing details, making reference images necessary. Meanwhile, subject-driven generation is limited to combining concrete objects or people, overlooking broader, abstract concepts. To address these challenges, we propose two novel tasks: multimodal instruction-based editing and generation. These tasks support both text and image instructions and extend the scope to include both concrete and abstract concepts, greatly enhancing their practical applications. Building upon these two new tasks, we introduce DreamOmni2, which is capable of multimodal instruction-based editing and generation under any concrete or abstract concept guidance. DreamOmni2 offers several advantages:
+**(1) Multimodal Instruction-based Generation**
 
-**Key Advantages:**
+For traditional subject-driven generation based on concrete objects, DreamOmni2 achieves the best results among open-source models, showing superior identity and pose consistency. Additionally, DreamOmni2 can reference abstract attributes (such as material, texture, makeup, hairstyle, posture, design style, artistic style, etc.), even surpassing commercial models in this area.
 
-**(1) Subject-Driven Generation for Concrete Objects**
-
-For traditional subject-driven generation based on concrete objects, DreamOmni2 achieves the best results among open-source models, showing superior identity and pose consistency. Additionally, DreamOmni2 can reference abstract attributes (such as material, texture, makeup, hairstyle, posture, design style, artistic style, etc.), even surpassing some commercial models in this area.
-
-**(2) Multimodal Instruction Editing**
+**(2) Multimodal Instruction-based Editing**
 
 Beyond traditional instruction-based editing models, DreamOmni2 supports multimodal instruction editing. In everyday editing tasks, there are often elements that are difficult to describe purely with language and require reference images. Our model addresses this need, supporting references to any concrete objects and abstract attributes, with performance comparable to commercial models.
 
 **(3) Unified Generation and Editing Model**
 
-Overall, DreamOmni2 is a more intelligent and powerful unified generation and editing model, offering enhanced capabilities across a wide range of tasks.
+Building upon these two new tasks, we introduce DreamOmni2, which is capable of multimodal instruction-based editing and generation under any concrete or abstract concept guidance. Overall, DreamOmni2 is a more intelligent and powerful open-sourced unified generation and editing model, offering enhanced capabilities across a wide range of tasks.
 
+
+## Quick Start
+
+### Requirements and Installation
+
+First, install the necessary dependencies:
 
 
 ## Web Demo
