@@ -229,10 +229,10 @@ with gr.Blocks(theme=gr.themes.Soft(), title="DreamOmni2", css=css) as demo:
         label="Generation Examples",
         examples=[
             [
-                "gen_tests/img1.jpg",
-                "gen_tests/img2.jpg",
+                "example_input/gen_tests/img1.jpg",
+                "example_input/gen_tests/img2.jpg",
                 "In the scene, the character from the first image stands on the left, and the character from the second image stands on the right. They are shaking hands against the backdrop of a spaceship interior.",
-                "gen_tests/gen_res.png"
+                "example_input/gen_tests/gen_res.png"
             ]
         ],
         inputs=[image_uploader_1, image_uploader_2, instruction_text, output_image],

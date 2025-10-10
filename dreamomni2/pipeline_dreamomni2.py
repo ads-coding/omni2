@@ -57,10 +57,10 @@ EXAMPLE_DOC_STRING = """
     Examples:
         ```py
         >>> import torch
-        >>> from diffusers import FluxKontextPipeline
+        >>> from diffusers import DreamOmni2Pipeline
         >>> from diffusers.utils import load_image
 
-        >>> pipe = FluxKontextPipeline.from_pretrained(
+        >>> pipe = DreamOmni2Pipeline.from_pretrained(
         ...     "black-forest-labs/FLUX.1-Kontext-dev", torch_dtype=torch.bfloat16
         ... )
         >>> pipe.to("cuda")
@@ -187,7 +187,7 @@ def retrieve_latents(
         raise AttributeError("Could not access latents of provided encoder_output")
 
 
-class FluxKontextPipeline(
+class DreamOmni2Pipeline(
     DiffusionPipeline,
     FluxLoraLoaderMixin,
     FromSingleFileMixin,
@@ -694,10 +694,7 @@ class FluxKontextPipeline(
                 image_ids = self._prepare_latent_image_ids(
                     batch_size, image_latent_height // 2, image_latent_width // 2, device, dtype
                 )
-                # image ids are the same as latent ids with the first dimension set to 1 instead of 0
-                # image_ids[..., 0] = 0.9+i*0.1 
                 image_ids[..., 0] = i+1
-                # image_ids[..., 1] += h_offset
                 image_ids[..., 2] += w_offset
                 tp_image_latents.append(image_latents)
                 tp_image_ids.append(image_ids)
