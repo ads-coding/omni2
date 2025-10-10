@@ -7,6 +7,9 @@
     <a href="https://pbihao.github.io/projects/DreamOmni2/index.html">
         <img alt="Project Page" src="https://img.shields.io/badge/Project-Page-blue">
     </a>
+    <a href="https://www.youtube.com/watch?v=8xpoiRK57uU">
+        <img alt="Project Page" src="https://img.shields.io/badge/Video-red">
+    </a>
     <a href="">
         <img alt="Build" src="https://img.shields.io/badge/DreamOmni2-Benchmark-green">
     </a>
@@ -19,19 +22,20 @@
 </p>
 
 ## 🔥 News
-- **2025.6.26**: Release DreamOmni2 tech report.
+- 🔥**2025.10.10**: Release DreamOmni2's codes and models.
+- 🔥**2025.10.09**: Release DreamOmni2 tech report.
 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/8xpoiRK57uU/0.jpg)](https://www.youtube.com/watch?v=8xpoiRK57uU)
+<p align="center">
+  <img width="600" src="imgs/gallery.png">
+</p>
 
 
+## Introduction
 
+Currently, Instruction-based editing relies solely on language instructions, which often fail to capture specific editing details, making reference images necessary. Meanwhile, subject-driven generation is limited to combining concrete objects or people, overlooking broader, abstract concepts. To address these challenges, we propose two novel tasks: multimodal instruction-based editing and generation. These tasks support both text and image instructions and extend the scope to include both concrete and abstract concepts, greatly enhancing their practical applications. Building upon these two new tasks, we introduce DreamOmni2, which is capable of multimodal instruction-based editing and generation under any concrete or abstract concepts guidance.
 
-
-
-
-
-
+## 
 
 ## Web Demo
 ```
@@ -48,3 +52,29 @@ CUDA_VISIBLE_DEVICES=1 python web_generate.py \
     --server_name "0.0.0.0" \
     --server_port 7861
 ```
+
+
+## Disclaimer
+
+This project strives to impact the domain of AI-driven image generation positively. Users are granted the freedom to
+create images using this tool, but they are expected to comply with local laws and utilize it responsibly.
+The developers do not assume any responsibility for potential misuse by users.
+
+
+##  Citation
+
+If DreamOmni2 is helpful, please help to ⭐ the repo.
+
+If you find this project useful for your research, please consider citing our [paper](https://arxiv.org/html/2510.06679v1).
+
+## Contact
+If you have any comments or questions, please [open a new issue](https://github.com/xxx/xxx/issues/new/choose) or contact [Bin Xia](zjbinxia@gmail.com).
+
+
+
+
+
+
+
+
+
