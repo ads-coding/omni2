@@ -13,10 +13,10 @@
     <a href="">
         <img alt="Build" src="https://img.shields.io/badge/DreamOmni2-Benchmark-green">
     </a>
-    <a href="">
+    <a href="https://huggingface.co/xiabs/DreamOmni2">
         <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Model-yellow">
     </a>    
-    <a href="">
+    <a href="https://huggingface.co/xiabs/DreamOmni2">
         <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Demo-yellow">
     </a>
 </p>
