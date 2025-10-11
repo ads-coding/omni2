@@ -16,12 +16,16 @@
     <a href="https://huggingface.co/xiabs/DreamOmni2">
         <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Model-yellow">
     </a>    
-    <a href="https://huggingface.co/xiabs/DreamOmni2">
-        <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Demo-yellow">
+    <a href="https://huggingface.co/spaces/wcy1122/DreamOmni2-Edit">
+        <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Editing%20Demo-yellow">
+    </a>
+    <a href="https://huggingface.co/spaces/wcy1122/DreamOmni2-Gen">
+        <img alt="Build" src="https://img.shields.io/badge/🤗-HF%20Generation%20Demo-yellow">
     </a>
 </p>
 
 ## 🔥 News
+- 🔥**2025.10.10**: Release DreamOmni2 [editing demo](https://huggingface.co/spaces/wcy1122/DreamOmni2-Edit) and [generation demo](https://huggingface.co/spaces/wcy1122/DreamOmni2-Gen)
 - 🔥**2025.10.10**: Release DreamOmni2 [Benchmark](https://huggingface.co/datasets/xiabs/DreamOmni2Bench).
 - 🔥**2025.10.10**: Release DreamOmni2's [codes](https://github.com/dvlab-research/DreamOmni2) and [models](https://huggingface.co/xiabs/DreamOmni2).
 - 🔥**2025.10.09**: Release DreamOmni2 [tech report](https://arxiv.org/html/2510.06679v1).
